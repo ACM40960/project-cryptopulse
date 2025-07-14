@@ -1,0 +1,14 @@
+# Inside CryptoPulse/.gitignore
+
+# Ignore the virtual environment
+venv/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore logs and junk
+*.log
+*.tmp
+.DS_Store
+
