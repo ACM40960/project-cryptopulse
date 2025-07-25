@@ -8,7 +8,7 @@ import os
 import logging
 
 class CryptoPulseDB:
-    def __init__(self, db_path='data/cryptopulse.db'):
+    def __init__(self, db_path='db/cryptopulse.db'):
         self.db_path = db_path
         self.init_database()
     
@@ -183,6 +183,66 @@ class CryptoPulseDB:
                     getattr(row, 'replies', 0),
                     ts,
                     getattr(row, 'url', None)
+                ))
+                new_count += 1
+            conn.commit()
+        finally:
+            conn.close()
+        return new_count
+
+
+    def insert_news_article(self, article: dict):
+        """Insert a single news article into the database."""
+        conn = sqlite3.connect(self.db_path)
+        try:
+            conn.execute("""
+                INSERT OR IGNORE INTO news_articles
+                (id, source, title, content, published_at, url)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (
+                article["id"],
+                article.get("source"),
+                article.get("title"),
+                article.get("content"),
+                article.get("published_at", datetime.utcnow()).timestamp() if hasattr(article.get("published_at", datetime.utcnow()), "timestamp") else article.get("published_at"),
+                article.get("url")
+            ))
+            conn.commit()
+        finally:
+            conn.close()
+
+    def insert_news_articles(self, df: pd.DataFrame) -> int:
+        """
+        Batch insert news articles from a DataFrame.
+        Returns the number of newly inserted rows.
+        """
+        new_count = 0
+        conn = sqlite3.connect(self.db_path)
+        try:
+            cursor = conn.cursor()
+            for row in df.itertuples(index=False):
+                aid = row.id
+                if cursor.execute(
+                    "SELECT 1 FROM news_articles WHERE id = ? LIMIT 1",
+                    (aid,)
+                ).fetchone():
+                    continue
+                ts = (
+                    row.published_at.timestamp()
+                    if hasattr(row.published_at, "timestamp")
+                    else row.published_at
+                )
+                cursor.execute("""
+                    INSERT INTO news_articles
+                    (id, source, title, content, published_at, url)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                """, (
+                    aid,
+                    getattr(row, "source", None),
+                    getattr(row, "title", None),
+                    getattr(row, "content", None),
+                    ts,
+                    getattr(row, "url", None)
                 ))
                 new_count += 1
             conn.commit()

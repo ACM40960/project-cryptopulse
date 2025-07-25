@@ -34,7 +34,21 @@ class RedditScraper:
         self.db = CryptoPulseDB()
         self.target_subreddits = [
             'ethereum', 'ethtrader', 'cryptocurrency',
-            'cryptomarkets', 'defi', 'ethfinance'
+            'cryptomarkets', 'defi', 'ethfinance',
+            # Previous expansion batch
+            'bitcoinmarkets', 'altcoin', 'cryptocurrencytrading',
+            'web3', 'nft', 'dao', 'uniswap', 'aave',
+            'compound', 'makerdao', 'polygon', 'arbitrum',
+            # NEW EXPANSION: Layer 2s, protocols, and communities
+            'optimism', 'loopringorg', 'starknet', 'zksync',
+            'sushiswap', 'yearn_finance', 'synthetix_io', 'balancer',
+            'chainlink', 'ethereum_classic', 'ethdev', 'ethstaker',
+            # Trading and investment communities
+            'cryptocurrencymemes', 'satoshistreetbets', 'altstreetbets',
+            'ethinsider', 'defiblockchain', 'yield_farming',
+            # Broader crypto communities
+            'solana', 'cardano', 'polkadot', 'avalanche',
+            'cosmonetwork', 'near_protocol', 'fantom'
         ]
 
     def scrape_subreddit_historical(self, subreddit_name, days_back=365, posts_per_day=300):
@@ -101,6 +115,85 @@ class RedditScraper:
         inserted = self.db.insert_reddit_posts(df)
         logging.info(f"r/{subreddit_name}: {len(df)} processed → {inserted} new saved")
         return inserted
+
+    def scrape_historical_search(self, search_terms, time_periods, max_posts=500):
+        """Advanced historical Reddit search using specific date ranges and terms."""
+        logging.info("Starting historical Reddit search collection")
+        total_posts = 0
+        
+        # Time periods for comprehensive coverage
+        if not time_periods:
+            time_periods = [
+                ("2020-2021", "after:2020-01-01 before:2022-01-01"),
+                ("2022", "after:2022-01-01 before:2023-01-01"), 
+                ("2023", "after:2023-01-01 before:2024-01-01"),
+                ("2024", "after:2024-01-01 before:2025-01-01"),
+            ]
+        
+        search_terms = search_terms or [
+            "ethereum price", "ETH pump", "ETH dump", "ethereum merge",
+            "defi hack", "ethereum upgrade", "gas fees", "smart contract",
+            "vitalik", "ethereum foundation", "layer 2", "rollup"
+        ]
+        
+        posts_data = []
+        
+        for period_name, period_filter in time_periods:
+            logging.info(f"Searching period: {period_name}")
+            
+            for term in search_terms:
+                try:
+                    # Search across major crypto subreddits
+                    search_query = f"{term} {period_filter}"
+                    for subreddit_name in ['cryptocurrency', 'ethereum', 'ethtrader', 'defi']:
+                        subreddit = self.reddit.subreddit(subreddit_name)
+                        
+                        # Search with date filter
+                        search_results = subreddit.search(
+                            search_query, 
+                            sort='top', 
+                            time_filter='all',
+                            limit=max_posts // (len(search_terms) * len(time_periods))
+                        )
+                        
+                        for post in search_results:
+                            # Skip if already exists
+                            if self.db.record_exists('reddit_posts', post.id):
+                                continue
+                                
+                            # Filter for crypto relevance
+                            text = (post.title + " " + post.selftext).lower()
+                            keywords = ['ethereum', 'eth', 'crypto', 'defi', 'blockchain', 'trading']
+                            if not any(k in text for k in keywords):
+                                continue
+                            
+                            posts_data.append({
+                                'id': post.id,
+                                'subreddit': subreddit_name,
+                                'title': post.title,
+                                'content': post.selftext or '',
+                                'score': post.score,
+                                'num_comments': post.num_comments,
+                                'created_utc': datetime.fromtimestamp(post.created_utc),
+                                'url': post.url
+                            })
+                            
+                        time.sleep(2)  # Rate limiting
+                        
+                except Exception as e:
+                    logging.warning(f"Search failed for '{term}' in {period_name}: {e}")
+                    continue
+        
+        if posts_data:
+            df = pd.DataFrame(posts_data)
+            df = df.drop_duplicates(subset=['id'])
+            df = df.sort_values('score', ascending=False)
+            
+            inserted = self.db.insert_reddit_posts(df)
+            logging.info(f"Historical search: {len(df)} processed → {inserted} new saved")
+            return inserted
+            
+        return 0
 
     def scrape_all_subreddits(self, days_back=180):
         """Loop over all target subreddits."""
