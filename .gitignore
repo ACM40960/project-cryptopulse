@@ -1,14 +1,59 @@
-# Inside CryptoPulse/.gitignore
-
-# Ignore the virtual environment
+# Environments
+.env
+.venv
 venv/
+env/
 
-# Ignore Python cache
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
 
-# Ignore logs and junk
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data files
+*.csv
+*.db
+*.db-journal
+*.json
+*.jsonl
+*.parquet
+*.hdf5
+data/
+!/data/.keep
+!manual_twitter_template.json
+
+# Logs
+logs/
 *.log
-*.tmp
-.DS_Store
+!/logs/.keep
 
+# Models
+models/
+*.joblib
+*.pkl
+*.h5
+*.model
+!/models/.keep
+
+# Reports
+reports/
+*.html
+*.pdf
+!/reports/.keep
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Other
+.Rhistory
+twitter_profile/
+archive/
