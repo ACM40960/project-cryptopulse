@@ -1,0 +1,39 @@
+{
+  "dataset_info": {
+    "samples": 178,
+    "features": 12,
+    "date_range": {
+      "start": "2025-02-01",
+      "end": "2025-07-29"
+    }
+  },
+  "feature_columns": [
+    "content_length_max",
+    "content_length_mean",
+    "num_comments_sum",
+    "volatility_score_reddit",
+    "volatility_score_mean",
+    "relevance_score_max",
+    "echo_score_mean",
+    "engagement_sum",
+    "echo_score_reddit",
+    "echo_score_max",
+    "volatility_score_max",
+    "engagement_mean"
+  ],
+  "target_columns": [
+    "direction_1d",
+    "direction_3d",
+    "direction_7d"
+  ],
+  "price_columns": [
+    "price_change_1d",
+    "price_change_3d",
+    "price_change_7d"
+  ],
+  "technical_indicators": [
+    "price_ma_7",
+    "price_volatility"
+  ],
+  "created_at": "2025-08-02T04:11:54.382111"
+}

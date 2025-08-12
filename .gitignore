@@ -15,14 +15,13 @@ __pycache__/
 .ipynb_checkpoints
 
 # Data files
-*.csv
 *.db
 *.db-journal
-*.json
+# *.json
 *.jsonl
 *.parquet
 *.hdf5
-data/
+# data/
 !/data/.keep
 !manual_twitter_template.json
 
