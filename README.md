@@ -83,7 +83,7 @@ The model achieved its 75% accuracy by being exceptionally good at predicting "U
 
 The confusion matrix for the LightGBM model provides a clear picture of these results:
 
-![LightGBM Confusion Matrix](./analysis/visualizations/plots/LightGBM_confusion_matrix.png)
+![LightGBM Confusion Matrix](./plots/LightGBM_confusion_matrix.png)
 
 ### 4.2. The Overfitting Trap: A Deeper Look
 
