@@ -77,7 +77,7 @@ Our modeling approach was deliberately iterative, starting with the most complex
 
 The final comparison of our models clearly shows the trade-off between performance and complexity. The LightGBM model was the top performer in terms of raw accuracy, but its directional accuracy reveals a significant bias.
 
-![Directional Accuracy Comparison](./analysis/visualizations/plots/model_directional_accuracy_comparison.png)
+![Directional Accuracy Comparison](./plots/model_directional_accuracy_comparison.png)
 
 The model achieved its 75% accuracy by being exceptionally good at predicting "Up" days (100% accuracy) but failing significantly on "Down" days (25% accuracy). This is a common pitfall in time-series modeling, where a model may simply learn the overall trend of the training period.
 
