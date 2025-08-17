@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="[http://googleusercontent.com/image_generation_content/2](https://github.com/ACM40960/project-cryptopulse/blob/main/docs/Crypto_logo.png)" alt="CryptoPulse Logo" width="200">
+  <img src="https://github.com/ACM40960/project-cryptopulse/blob/main/docs/Crypto_logo.png" alt="CryptoPulse Logo" width="200">
   <h1>CryptoPulse: A Critical Re-evaluation of Social Media Sentiment for Cryptocurrency Price Prediction</h1>
 
   <p>
