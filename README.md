@@ -14,6 +14,22 @@
 </div>
 
 ---
+## 📋 Table of Contents
+
+1.  [Introduction: The Vision for an Automated System](#1-introduction-the-vision-for-an-automated-system)
+2.  [The Research Journey: A Detailed Chronology](#2-the-research-journey-a-detailed-chronology)
+3.  [Methodology](#3-methodology)
+    * [System Architecture](#31-system-architecture)
+    * [Modeling: An Iterative Path](#32-modeling-an-iterative-path)
+4.  [Results and Analysis](#4-results-and-analysis)
+    * [Final Model Performance](#41-final-model-performance)
+    * [The Overfitting Trap: A Deeper Look](#42-the-overfitting-trap-a-deeper-look)
+5.  [Conclusion](#5-conclusion)
+6.  [Getting Started](#6-getting-started)
+7.  [Future Work](#7-future-work)
+8.  [References](#8-references)
+
+---
 
 
 ## Abstract
