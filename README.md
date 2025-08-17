@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/ACM40960/project-cryptopulse/blob/main/docs/Crypto_Pulse.png" width="200">
+  <img src="https://user-images.githubusercontent.com/80636305/126576577-cb07ba84-a4fe-4d63-b43a-e7832c77483d.png" width="200">
   <h1>CryptoPulse: A Critical Re-evaluation of Social Media Sentiment for Cryptocurrency Price Prediction</h1>
 
   <p>
