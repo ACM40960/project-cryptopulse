@@ -1,8 +1,18 @@
-# CryptoPulse: A Critical Re-evaluation of Social Media Sentiment for Cryptocurrency Price Prediction
+<div align="center">
+  <h1>CryptoPulse: A Critical Re-evaluation of Social Media Sentiment for Cryptocurrency Price Prediction</h1>
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Python Version](https://img.shields.io/badge/python-3.9+-brightgreen.svg)
-![Status](https://img.shields.io/badge/status-complete-green.svg)
+  <p>
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg">
+    <img alt="Python Version" src="https://img.shields.io/badge/python-3.9+-brightgreen.svg">
+    <img alt="Status" src="https://img.shields.io/badge/status-complete-green.svg">
+  </p>
+
+  <blockquote>
+    <strong>This project critically re-evaluates the efficacy of social media sentiment analysis in cryptocurrency price prediction, with a focus on the impact of data limitations and model robustness.</strong>
+  </blockquote>
+</div>
+
+---
 
 > **This project critically re-evaluates the efficacy of social media sentiment analysis in cryptocurrency price prediction, with a focus on the impact of data limitations and model robustness.**
 
