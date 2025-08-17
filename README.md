@@ -14,9 +14,6 @@
 
 ---
 
-> **This project critically re-evaluates the efficacy of social media sentiment analysis in cryptocurrency price prediction, with a focus on the impact of data limitations and model robustness.**
-
----
 
 ## Abstract
 
