@@ -14,7 +14,7 @@
 </div>
 
 ---
-## 📋 Table of Contents
+## Table of Contents
 
 1.  [Introduction: The Vision for an Automated System](#1-introduction-the-vision-for-an-automated-system)
 2.  [The Research Journey: A Detailed Chronology](#2-the-research-journey-a-detailed-chronology)
