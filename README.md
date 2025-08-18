@@ -112,7 +112,11 @@ Our modeling approach was deliberately iterative, moving from complex to simple 
 
 The LightGBM model was the top performer on raw accuracy (75%) but was heavily biased. It achieved this by being perfect at predicting "Up" days (100% accuracy) but failing significantly on "Down" days (25% accuracy), essentially just learning the market's general upward trend during the training period.
 
+![Model Comparison](./analysis/visualizations/plots/model_comparison.png)
+_A comparison of the performance of the different models._
+
 ![Directional Accuracy Comparison](./plots/model_directional_accuracy_comparison.png)
+_A comparison of the directional accuracy of the different models._
 
 The confusion matrix clearly illustrates this bias:
 
@@ -123,6 +127,10 @@ The confusion matrix clearly illustrates this bias:
 The most critical insight came from the feature importance analysis. The fact that `content_length` was the most important feature was a clear red flag. This confirmed the model was not learning nuanced sentiment but a simple, misleading pattern.
 
 ![Feature Importance for Random Forest](./analysis/visualizations/plots/feature_importance.png)
+_The most important features for the Random Forest model._
+
+![Model Predictions Comparison](./analysis/visualizations/plots/model_predictions_comparison.png)
+_A comparison of the predictions of the different models._
 
 ---
 
@@ -146,8 +154,8 @@ Follow these instructions to set up and run the project locally.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/ACM40960/project-DeepankarVyas.git](https://github.com/ACM40960/project-DeepankarVyas.git)
-    cd project-DeepankarVyas
+    git clone https://github.com/ACM40960/project-cryptopulse.git
+    cd project-cryptopulse
     ```
 
 2.  **Create a virtual environment and install dependencies:**
@@ -158,20 +166,11 @@ Follow these instructions to set up and run the project locally.
     ```
 
 3.  **Explore the main workflow:**
-    The best way to understand the project is to review the `CryptoPulse_Workflow.ipynb` notebook in the `notebooks/` directory. It provides a step-by-step walkthrough of the entire process, from data loading to model evaluation.
+    The best way to understand the project is to review the **[CryptoPulse Workflow Notebook](notebooks/CryptoPulse_Workflow.ipynb)**. It provides a step-by-step walkthrough of the entire process, from data loading to model evaluation.
 
 ---
 
-## 7. Future Work
 
-The robust pipeline built for CryptoPulse serves as a foundation for several exciting future directions:
-
-* [ ] **Scale Data Collection:** Deploy the collection scripts on a cloud server (e.g., AWS EC2) to run 24/7 and build a truly large-scale time-series dataset.
-* [ ] **Integrate More Data Sources:** Add scrapers for Telegram channels, Discord servers, and other crypto-focused communities to capture a wider range of sentiment.
-* [ ] **Advanced Modeling:** With a larger dataset (>1000 daily samples), revisit complex architectures like LSTMs and Temporal Fusion Transformers.
-* [ ] **Develop a Live Dashboard:** Create a web-based dashboard (using Dash or Streamlit) to visualize real-time sentiment and model predictions.
-
----
 
 ## 8. References
 
