@@ -28,6 +28,7 @@ __pycache__/
 # Logs
 logs/
 *.log
+processing_output.log
 !/logs/.keep
 
 # Models
