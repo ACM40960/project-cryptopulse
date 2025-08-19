@@ -107,7 +107,7 @@ CryptoPulse is an automated pipeline composed of four main layers.
 
 The core of CryptoPulse's predictive power comes from its custom-engineered features. These features are designed to capture different aspects of social media sentiment and activity:
 
-*   **Sentiment Score:** A traditional sentiment score calculated using **FinBERT**, a financial domain-specific language model. This provides a baseline measure of the positive or negative sentiment of the text.
+*   **Sentiment Score:** A traditional sentiment score calculated using **CryptoBERT**, a domain-specific language model for the cryptocurrency space. This provides a baseline measure of the positive or negative sentiment of the text.
 *   **Relevance Score:** A score that measures how relevant a piece of text is to the cryptocurrency market. This is calculated using Sentence-BERT to measure the semantic similarity between the text and a set of crypto-related keywords.
 *   **Volatility Trigger:** A score that identifies text that is likely to trigger price volatility. This is based on a set of keywords and phrases that have been historically associated with large price movements.
 *   **Echo Score:** A score that measures the "echo chamber" effect of social media. It identifies text that is being repeated across multiple platforms and sources, which can be a sign of a strong market narrative.
