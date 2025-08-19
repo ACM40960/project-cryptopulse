@@ -191,8 +191,8 @@ Follow these instructions to set up and run the project locally.
 
 ## 8. References
 
-1.  Araci, D. (2019). *FinBERT: Financial Sentiment Analysis with Pre-trained Language Models*.
-2.  Ke, G., et al. (2017). *LightGBM: A Highly Efficient Gradient Boosting Decision Tree*.
-3.  Lim, B., et al. (2021). *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*.
-4.  Taylor, S. J., & Letham, B. (2018). *Forecasting at Scale*.
-5.  ElKulako, A. (2023). *CryptoBERT: A Cryptocurrency Sentiment Analysis Model*.
+1.  **ElKulako, A. (2023). *CryptoBERT: A Cryptocurrency Sentiment Analysis Model*.**
+2.  **Ke, G., et al. (2017). *LightGBM: A Highly Efficient Gradient Boosting Decision Tree*. Advances in Neural Information Processing Systems.**
+3.  **Bollen, J., Mao, H., & Zeng, X. (2011). Twitter mood predicts the stock market. *Journal of Computational Science*, 2(1), 1-8.**
+4.  **Liu, B. (2012). *Sentiment Analysis and Opinion Mining*. Morgan & Claypool.**
+5.  **Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. *arXiv preprint arXiv:1810.04805*.**
