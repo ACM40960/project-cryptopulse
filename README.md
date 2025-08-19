@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://user-images.githubusercontent.com/80636305/126576577-cb07ba84-a4fe-4d63-b43a-e7832c77483d.png" width="200">
-  <h1>CryptoPulse: A Critical Re-evaluation of Social Media Sentiment for Cryptocurrency Price Prediction</h1>
+  <h1>CryptoPulse: A Critical Analysis of Sentiment-Based Financial Prediction</h1>
 
   <p>
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg">
@@ -9,7 +9,7 @@
   </p>
 
   <blockquote>
-    <strong>This project critically re-evaluates the efficacy of social media sentiment analysis in cryptocurrency price prediction, with a focus on the impact of data limitations and model robustness.</strong>
+    <strong>This project develops and evaluates a comprehensive machine learning pipeline to assess the true predictive power of social media sentiment on cryptocurrency price movements, revealing key insights into the challenges of data sparsity and model overfitting in financial forecasting.</strong>
   </blockquote>
 </div>
 
