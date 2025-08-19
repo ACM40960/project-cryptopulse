@@ -82,7 +82,18 @@ We tested a wide spectrum of models, from complex LSTMs to simpler tree-based mo
 
 ## 3. Methodology
 
-For a detailed, step-by-step guide of the entire workflow, please see the **[CryptoPulse Workflow Notebook](notebooks/CryptoPulse_Workflow.ipynb)**.
+### Key Notebooks
+
+#### 🔄 [CryptoPulse Workflow](notebooks/CryptoPulse_Workflow.ipynb)
+- **Purpose**: High-level project overview and workflow guide
+- **Audience**: General understanding of project structure and methodology
+- **Content**: Links to scripts, system architecture, and step-by-step process walkthrough
+
+#### 🧪 [CryptoPulse Complete Analysis](notebooks/CryptoPulse_Complete_Analysis.ipynb)
+- **Purpose**: Comprehensive scientific validation and model comparison
+- **Audience**: Technical readers, researchers, and data scientists
+- **Content**: 3-phase systematic testing (Baseline → Enhanced → CryptoBERT), statistical analysis, hypothesis validation
+- **Key Features**: CryptoBERT integration, feature importance analysis, overfitting detection, performance comparison
 
 ### 3.1. Data Selection and Subset Rationale
 
@@ -182,8 +193,9 @@ Follow these instructions to set up and run the project locally.
     pip install -r requirements.txt
     ```
 
-3.  **Explore the main workflow:**
-    The best way to understand the project is to review the **[CryptoPulse Workflow Notebook](notebooks/CryptoPulse_Workflow.ipynb)**. It provides a step-by-step walkthrough of the entire process, from data loading to model evaluation.
+3.  **Explore the notebooks:**
+    - **Start with**: [CryptoPulse Workflow Notebook](notebooks/CryptoPulse_Workflow.ipynb) for project overview
+    - **Deep dive**: [CryptoPulse Complete Analysis Notebook](notebooks/CryptoPulse_Complete_Analysis.ipynb) for full scientific analysis and model comparison
 
 ---
 
