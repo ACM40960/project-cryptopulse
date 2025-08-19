@@ -86,9 +86,7 @@ We tested a wide spectrum of models, from complex LSTMs to simpler tree-based mo
 
 CryptoPulse is an automated pipeline composed of four main layers.
 
-> *A high-level diagram of the system architecture would be a great addition here!*
->
-> `![System Architecture Diagram](./assets/system_architecture.png)`
+
 
 1.  **Data Collection:** Scripts ([`scripts/daily_collection.py`](./scripts/daily_collection.py)) orchestrate data collection from Reddit, Twitter, and news sources.
 2.  **Data Processing & Storage:** A robust system for cleaning, processing, and storing data in a central SQLite database.
@@ -115,19 +113,18 @@ The LightGBM model was the top performer on raw accuracy (75%) but was heavily b
 ![Model Comparison](./analysis/visualizations/plots/model_comparison.png)
 _A comparison of the performance of the different models._
 
-![Directional Accuracy Comparison](./plots/model_directional_accuracy_comparison.png)
-_A comparison of the directional accuracy of the different models._
+<br>
 
 The confusion matrix clearly illustrates this bias:
 
 ![LightGBM Confusion Matrix](./plots/LightGBM_confusion_matrix.png)
 
-### 4.2. The Overfitting Trap: A Deeper Look
-
-The most critical insight came from the feature importance analysis. The fact that `content_length` was the most important feature was a clear red flag. This confirmed the model was not learning nuanced sentiment but a simple, misleading pattern.
+<br>
 
 ![Feature Importance for Random Forest](./analysis/visualizations/plots/feature_importance.png)
 _The most important features for the Random Forest model._
+
+<br>
 
 ![Model Predictions Comparison](./analysis/visualizations/plots/model_predictions_comparison.png)
 _A comparison of the predictions of the different models._
