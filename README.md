@@ -51,7 +51,7 @@
 * **Web Scraping:** Selenium, BeautifulSoup
 * **Database:** SQLite
 * **Machine Learning:** LightGBM, Random Forest, Logistic Regression
-* **Natural Language Processing:** FinBERT, Sentence-BERT (via Hugging Face)
+* **Natural Language Processing:** CryptoBERT, Sentence-BERT (via Hugging Face)
 * **Data Visualization:** Matplotlib, Seaborn
 * **Development:** Jupyter Notebooks, Git & GitHub
 
