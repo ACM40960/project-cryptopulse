@@ -36,7 +36,7 @@
 
 **Objective:** To critically re-evaluate the use of social media sentiment for cryptocurrency price prediction, focusing on data limitations and model robustness.
 
-**Methods:** We developed CryptoPulse, an integrated machine learning pipeline that collects and processes social media data from Reddit, Twitter, and news sources. The system gathered over 15,000 social media entries and engineered 12 sentiment-based features using advanced NLP models like FinBERT and Sentence-BERT. A suite of machine learning models, from LSTMs to Logistic Regression, were trained and evaluated.
+**Methods:** We developed CryptoPulse, an integrated machine learning pipeline that collects and processes social media data from Reddit, Twitter, and news sources. The system gathered over 15,000 social media entries and engineered 12 sentiment-based features using advanced NLP models like CryptoBert and Sentence-BERT. A suite of machine learning models, from LSTMs to Logistic Regression, were trained and evaluated.
 
 **Results:** While complex models like LightGBM initially showed high accuracy (75%), further analysis revealed this was likely due to **overfitting** on the small dataset (178 daily samples). A key insight was the model's reliance on non-semantic features like `content_length`, a classic sign of learning **spurious correlations**. A simpler, more robust model provided a realistic performance baseline.
 
