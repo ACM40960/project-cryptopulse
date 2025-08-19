@@ -82,18 +82,38 @@ We tested a wide spectrum of models, from complex LSTMs to simpler tree-based mo
 
 ## 3. Methodology
 
-### 3.1. System Architecture
+For a detailed, step-by-step guide of the entire workflow, please see the **[CryptoPulse Workflow Notebook](notebooks/CryptoPulse_Workflow.ipynb)**.
+
+### 3.1. Data Selection and Subset Rationale
+
+While the CryptoPulse pipeline collected over 15,000 data points, a carefully selected subset of 178 daily samples was used for the final modeling phase. This decision was driven by the following key principles:
+
+*   **Data Quality and Consistency:** The selected subset represents a period with the most consistent and high-quality data across all sources (Reddit, Twitter, and News). This minimizes the impact of data gaps or inconsistencies in any single source.
+*   **Balanced Distribution:** The subset was chosen to ensure a balanced representation of different market conditions (bullish, bearish, and neutral periods). This helps to prevent the model from being biased towards a specific market trend.
+*   **Temporal Alignment:** The 6-month period of the subset ensures that the social media data is temporally aligned with the corresponding price data, which is crucial for building a reliable time-series model.
+
+This rigorous data selection process is essential for building a robust and reliable model, even if it means working with a smaller dataset.
+
+### 3.2. System Architecture
 
 CryptoPulse is an automated pipeline composed of four main layers.
-
-
 
 1.  **Data Collection:** Scripts ([`scripts/daily_collection.py`](./scripts/daily_collection.py)) orchestrate data collection from Reddit, Twitter, and news sources.
 2.  **Data Processing & Storage:** A robust system for cleaning, processing, and storing data in a central SQLite database.
 3.  **Feature Engineering:** An NLP pipeline ([`src/modern_score_metrics.py`](./src/modern_score_metrics.py)) that enriches raw text with sentiment and other predictive features.
 4.  **Modeling & Evaluation:** A comprehensive training and evaluation framework ([`src/ml_model_trainer.py`](./src/ml_model_trainer.py)).
 
-### 3.2. Modeling: An Iterative Path
+### 3.3. Feature Engineering
+
+The core of CryptoPulse's predictive power comes from its custom-engineered features. These features are designed to capture different aspects of social media sentiment and activity:
+
+*   **Sentiment Score:** A traditional sentiment score calculated using FinBERT, a financial domain-specific language model. This provides a baseline measure of the positive or negative sentiment of the text.
+*   **Relevance Score:** A score that measures how relevant a piece of text is to the cryptocurrency market. This is calculated using Sentence-BERT to measure the semantic similarity between the text and a set of crypto-related keywords.
+*   **Volatility Trigger:** A score that identifies text that is likely to trigger price volatility. This is based on a set of keywords and phrases that have been historically associated with large price movements.
+*   **Echo Score:** A score that measures the "echo chamber" effect of social media. It identifies text that is being repeated across multiple platforms and sources, which can be a sign of a strong market narrative.
+*   **Content Depth:** A score that measures the complexity and technical depth of the text. This is used to differentiate between casual mentions and in-depth discussions, which may have different predictive power.
+
+### 3.4. Modeling: An Iterative Path
 
 Our modeling approach was deliberately iterative, moving from complex to simple as we understood the data's limitations.
 
