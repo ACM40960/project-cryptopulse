@@ -85,15 +85,10 @@ We tested a wide spectrum of models, from complex LSTMs to simpler tree-based mo
 ### Key Notebooks
 
 #### 🔄 [CryptoPulse Workflow](notebooks/CryptoPulse_Workflow.ipynb)
-- **Purpose**: High-level project overview and workflow guide
-- **Audience**: General understanding of project structure and methodology
-- **Content**: Links to scripts, system architecture, and step-by-step process walkthrough
+Project overview, system architecture, and script links.
 
 #### 🧪 [CryptoPulse Complete Analysis](notebooks/CryptoPulse_Complete_Analysis.ipynb)
-- **Purpose**: Comprehensive scientific validation and model comparison
-- **Audience**: Technical readers, researchers, and data scientists
-- **Content**: 3-phase systematic testing (Baseline → Enhanced → CryptoBERT), statistical analysis, hypothesis validation
-- **Key Features**: CryptoBERT integration, feature importance analysis, overfitting detection, performance comparison
+3-phase model comparison (Baseline → Enhanced → CryptoBERT), statistical validation, and hypothesis testing.
 
 ### 3.1. Data Selection and Subset Rationale
 
